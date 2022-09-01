@@ -13,8 +13,9 @@ const WeekContainer = () => {
       console.log(oneWeather);
     });
 
+
   return <div>
-  ]
+      hello
   </div>;
 };
 
