@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div>
-        <p>Температура </p>
-        <p>состояние погоды </p>
-        <p>скорость ветра</p>
+    <div className='cart__item'>
+        
+        <p>{props.day}</p>
+        <p>{props.feelsLike}</p>
+        <p>{props.weather} </p>
     </div>
   )
 }

@@ -1,0 +1,24 @@
+.cart{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .cart__item{
+        background-color: rgba(139, 128, 128, 0.7);
+        padding: 50px;
+        border-radius: 10px;
+        min-width: 300px;
+        min-height: 500px;
+        margin-top: 20px;
+        font-size: 20px;
+        color: #fff;
+        transition: all .2s;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+        &:hover{
+            background-color: rgba(201, 188, 188, 0.7);
+            cursor: pointer;
+        }
+    }
+
+}
