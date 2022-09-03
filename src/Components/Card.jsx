@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
 
 const Card = (props) => {
   return (
-    <div className='cart__item'>
-        
-        <p>{props.day}</p>
-        <p>{props.feelsLike}</p>
-        <p>{props.weather} </p>
-    </div>
-  )
-}
+    <div className="cart__item">
+      <p className="cart__item-day">{props.day}</p>
+      <i>
+        <img className={props.image} src={props.image} alt="" />
+      </i>
 
-export default Card
+      <p className="cart__item-temp">{props.feelsLike} ℃</p>
+      <p className="cart__item-weather">{props.weather} </p>
+    </div>
+  );
+};
+
+export default Card;

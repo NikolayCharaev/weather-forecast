@@ -77,6 +77,87 @@ select {
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
+}
+
+body {
+  background: #01010e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#01010e), color-stop(21%, #020024), color-stop(99%, #9600cd), to(#c200ff));
+  background: linear-gradient(180deg, #01010e 0%, #020024 21%, #9600cd 99%, #c200ff 100%);
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+}
+
+.title {
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.city-name {
+  color: salmon;
+  font-weight: 300;
+}
+
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+}
+
+.cart .cart__item {
+  background-color: rgba(139, 128, 128, 0.7);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  min-width: 300px;
+  min-height: 400px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #fff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.cart .cart__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.cart .cart__item:hover {
+  background-color: rgba(201, 188, 188, 0.7);
+  cursor: pointer;
+}
+
+.cart .cart__item:hover svg path {
+  stroke: red;
+  stroke-width: inherit;
+  fill: inherit;
+}
+
+.cart .cart__item-day {
+  font-size: 30px;
+}
+
+.content__top {
+  margin-top: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,45 +173,8 @@ select {
           align-items: center;
 }
 
-body {
-  background-color: black;
-  font-family: sans-serif;
-}
-
-.title {
-  color: #fff;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.cart {
-  margin-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.cart .cart__item {
-  background-color: rgba(139, 128, 128, 0.7);
-  padding: 50px;
-  border-radius: 10px;
-  min-width: 300px;
-  min-height: 500px;
-  margin-top: 20px;
-  font-size: 20px;
-  color: #fff;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-}
-
-.cart .cart__item:not(:last-child) {
-  margin-right: 20px;
-}
-
-.cart .cart__item:hover {
-  background-color: rgba(201, 188, 188, 0.7);
-  cursor: pointer;
+.content__top .search__city-input {
+  min-width: 700px;
+  padding: 10px;
+  border-radius: 5px;
 }

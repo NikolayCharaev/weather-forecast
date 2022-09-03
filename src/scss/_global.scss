@@ -68,27 +68,36 @@ select {
   }
 }
 
-
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
 }
 
-
-body{
-    background-color: black;
-    font-family: sans-serif;
-
+body {
+  background: rgb(1, 1, 14);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 1, 14, 1) 0%,
+    rgba(2, 0, 36, 1) 21%,
+    rgba(150, 0, 205, 1) 99%,
+    rgba(194, 0, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  font-family: sans-serif;
 }
 
-.title{
-    color: #fff;
-    margin-top: 20px;
-    text-align: center;
+.title {
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.city-name{
+    color: salmon;
+    font-weight: 300;
 }
