@@ -1,36 +1,31 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card';
-import debounce from 'lodash.debounce'
+import debounce from 'lodash.debounce';
 import { useState } from 'react';
 
 const WeekContainer = () => {
-
-
-  const [city,setCity] = useState('')
-//   const test = 'Moscow'
+  const [city, setCity] = useState('');
   const [data, setData] = useState([]);
 
   const onChangeInput = debounce((event) => {
-    setCity(event.target.value)
-    console.log('Hello')
-  },500)
-
+    setCity(event.target.value);
+  }, 500);
 
   React.useEffect(() => {
     async function fetchWeather() {
-      try  {
-        //   if (city) {
-            await axios
-            .get(
-              `https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&units=metric&APPID=3ac01cc58fb1a0851dd845d47e02307d`,
-            )
-            .then((elem) => {
-              const oneWeather = elem.data.list.filter((elem) => elem.dt_txt.includes('18:00:00'));
-              console.log(oneWeather);
-              setData(oneWeather);
-            });
-        //   }
+      try {
+        await axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/forecast?q=${
+              city ? city : 'Moscow'
+            }&lang=ru&units=metric&APPID=3ac01cc58fb1a0851dd845d47e02307d`,
+          )
+          .then((elem) => {
+            const oneWeather = elem.data.list.filter((elem) => elem.dt_txt.includes('18:00:00'));
+            console.log(oneWeather);
+            setData(oneWeather);
+          });
       } catch (err) {
         console.log(`Произошла ошибка :( Код ошибки ${err}`);
       }
@@ -40,11 +35,16 @@ const WeekContainer = () => {
 
   return (
     <div className="container">
-        <div className="content__top">
-      <h1 className="title">{`Прогноз погоды`}</h1>
-      <form className="search__city" action="">
-        <input className="search__city-input" type="text"  placeholder="введите название города" onChange={onChangeInput} />
-      </form>
+      <div className="content__top">
+        <h1 className="title">{`Прогноз погоды`}</h1>
+        <form className="search__city" action="">
+          <input
+            className="search__city-input"
+            type="text"
+            placeholder="введите название города"
+            onChange={onChangeInput}
+          />
+        </form>
       </div>
 
       <div className="cart">

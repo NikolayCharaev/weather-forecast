@@ -74,7 +74,7 @@ select {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -142,7 +142,6 @@ body {
 }
 
 .cart .cart__item:hover {
-  background-color: rgba(201, 188, 188, 0.7);
   cursor: pointer;
 }
 
@@ -174,7 +173,13 @@ body {
 }
 
 .content__top .search__city-input {
+  margin-top: 20px;
   min-width: 700px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.test {
+  color: #fff;
+  font-size: 40px;
 }
