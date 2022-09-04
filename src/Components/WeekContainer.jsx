@@ -3,6 +3,8 @@ import axios from 'axios';
 import Card from './Card';
 import debounce from 'lodash.debounce';
 import { useState } from 'react';
+import '../css/style.css'
+import '../css/owfont-regular.css'
 
 const WeekContainer = () => {
   const [city, setCity] = useState('');
