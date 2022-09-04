@@ -91,6 +91,9 @@ body {
   color: #fff;
   margin-top: 20px;
   text-align: center;
+  @media(max-width:447px) {
+    font-size: 20px;
+  }
 }
 
 .city-name{

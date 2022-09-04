@@ -11,13 +11,20 @@
         min-width: 700px;
         padding: 10px;
         border-radius: 5px;
+
+        @media(max-width:717px) {
+            min-width: 500px;
+        }
+        @media(max-width:717px) {
+            min-width: 400px;
+        }
+        @media(max-width:447px) {
+            min-width: 300px;
+
+            &::placeholder{
+                font-size: 10px;
+            }
+        }
     }
 }
 
-.test{
-    color: #fff;
-    font-size: 40px;
-  line-height: 50px;
-
-  background-color: red;
-}

@@ -3,6 +3,19 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  @media(max-width:1614px) {
+    margin-top: 40px;
+  }
+  @media(max-width:1104px) {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    margin-bottom: 100px;
+  }
+
+  @media(max-width:1104px) {
+    grid-template-columns: repeat(1,1fr);
+
+  }
   .cart__item {
     background-color: rgba(139, 128, 128, 0.7);
     border-radius: 10px;
@@ -17,11 +30,27 @@
     font-size: 20px;
     color: #fff;
     transition: all 0.2s;
+    @media(max-width:1614px) {
+      min-width: 200px;
+      min-height: 300px;
+      font-size: 15px;
+    }
+    @media(max-width:1104px) {
+
+    }
+ 
     &:not(:last-child) {
       margin-right: 20px;
+
+      @media(max-width:1104px) {
+        margin-right: 0;
+        margin: 10px;
+      }
+    }
+    @media(max-width:1104px) {
+      margin: 10px;
     }
     &:hover {
-    //   background-color: rgba(201, 188, 188, 0.7);
       cursor: pointer;
       svg path {
         stroke: red;
@@ -33,5 +62,9 @@
 
   .cart__item-day {
     font-size: 30px;
+
+    @media(max-width:1614px) {
+      font-size: 20px;
+    }
   }
 }

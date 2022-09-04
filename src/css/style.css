@@ -1,9 +1,9 @@
 @charset "UTF-8";
+/* Указываем box sizing */
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul[class],
@@ -62,12 +62,9 @@ select {
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -80,7 +77,6 @@ select {
 
 body {
   background: #01010e;
-  background: -webkit-gradient(linear, left top, left bottom, from(#01010e), color-stop(21%, #020024), color-stop(99%, #9600cd), to(#c200ff));
   background: linear-gradient(180deg, #01010e 0%, #020024 21%, #9600cd 99%, #c200ff 100%);
   background-repeat: no-repeat;
   font-family: sans-serif;
@@ -92,52 +88,83 @@ body {
   text-align: center;
 }
 
+@media (max-width: 447px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
 .city-name {
   color: salmon;
   font-weight: 300;
 }
 
 .cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-top: 100px;
+}
+
+@media (max-width: 1614px) {
+  .cart {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1104px) {
+  .cart {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 1104px) {
+  .cart {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .cart .cart__item {
   background-color: rgba(139, 128, 128, 0.7);
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   min-width: 300px;
   min-height: 400px;
   margin-top: 20px;
   font-size: 20px;
   color: #fff;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+@media (max-width: 1614px) {
+  .cart .cart__item {
+    min-width: 200px;
+    min-height: 300px;
+    font-size: 15px;
+  }
 }
 
 .cart .cart__item:not(:last-child) {
   margin-right: 20px;
+}
+
+@media (max-width: 1104px) {
+  .cart .cart__item:not(:last-child) {
+    margin-right: 0;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 1104px) {
+  .cart .cart__item {
+    margin: 10px;
+  }
 }
 
 .cart .cart__item:hover {
@@ -154,21 +181,18 @@ body {
   font-size: 30px;
 }
 
+@media (max-width: 1614px) {
+  .cart .cart__item-day {
+    font-size: 20px;
+  }
+}
+
 .content__top {
   margin-top: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__top .search__city-input {
@@ -178,9 +202,23 @@ body {
   border-radius: 5px;
 }
 
-.test {
-  color: #fff;
-  font-size: 40px;
-  line-height: 50px;
-  background-color: red;
+@media (max-width: 717px) {
+  .content__top .search__city-input {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 717px) {
+  .content__top .search__city-input {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 447px) {
+  .content__top .search__city-input {
+    min-width: 300px;
+  }
+  .content__top .search__city-input::placeholder {
+    font-size: 10px;
+  }
 }
