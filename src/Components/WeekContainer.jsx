@@ -32,7 +32,6 @@ const WeekContainer = () => {
     }
     fetchWeather();
   }, [city]);
-
   return (
     <div className="container">
       <div className="content__top">
@@ -41,7 +40,7 @@ const WeekContainer = () => {
           <input
             className="search__city-input"
             type="text"
-            placeholder="введите название города"
+            placeholder="введите название города ( Москва по умолчанию )"
             onChange={onChangeInput}
           />
         </form>
