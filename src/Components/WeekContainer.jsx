@@ -12,7 +12,7 @@ const WeekContainer = () => {
 
   const onChangeInput = debounce((event) => {
     setCity(event.target.value);
-  }, 500);
+  }, 1500);
 
   React.useEffect(() => {
     async function fetchWeather() {
@@ -25,11 +25,10 @@ const WeekContainer = () => {
           )
           .then((elem) => {
             const oneWeather = elem.data.list.filter((elem) => elem.dt_txt.includes('18:00:00'));
-            console.log(oneWeather);
             setData(oneWeather);
           });
       } catch (err) {
-        console.log(`Произошла ошибка :( Код ошибки ${err}`);
+        setCity(`Произошла ошибка :( Город не найден.`)
       }
     }
     fetchWeather();
@@ -38,6 +37,9 @@ const WeekContainer = () => {
     <div className="container">
       <div className="content__top">
         <h1 className="title">{`Прогноз погоды`}</h1>
+        <p className='city-name'>{
+          city ? 'Выбран город - ' + city[0].toUpperCase() + city.slice(1).toLowerCase() : ''
+        }</p>
         <form className="search__city" action="">
           <input
             className="search__city-input"
