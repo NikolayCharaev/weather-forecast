@@ -105,21 +105,15 @@ body {
 
 .cart {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-}
-
-@media (max-width: 1614px) {
-  .cart {
-    margin-top: 40px;
-  }
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 @media (max-width: 1104px) {
   .cart {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 100px;
   }
 }
 
@@ -132,7 +126,6 @@ body {
 @media (max-width: 375px) {
   .cart {
     grid-template-columns: repeat(auto-fill, 173px);
-    margin: 0;
     width: 100%;
   }
 }
@@ -151,6 +144,7 @@ body {
   font-size: 20px;
   color: #fff;
   transition: all 0.2s;
+  margin: 5px;
 }
 
 @media (max-width: 1614px) {
@@ -158,12 +152,6 @@ body {
     min-width: 200px;
     min-height: 300px;
     font-size: 15px;
-  }
-}
-
-@media (max-width: 1104px) {
-  .cart .cart__item {
-    margin: 10px;
   }
 }
 
