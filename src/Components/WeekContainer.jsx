@@ -6,12 +6,19 @@ import { useState } from 'react';
 import '../css/style.css'
 import '../css/owfont-regular.css'
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setCity, setData } from '../redux/requestStore/requestStore';
+
 const WeekContainer = () => {
-  const [city, setCity] = useState('');
-  const [data, setData] = useState([]);
+  // const [city, setCity] = useState('');
+  // const [data, setData] = useState([]);
+
+  const dispatch = useDispatch()
+  const city = useSelector(city => city.processingRequest.city),
+        data = useSelector(city => city.processingRequest.data)
 
   const onChangeInput = debounce((event) => {
-    setCity(event.target.value);
+    dispatch(setCity(event.target.value));
   }, 1500);
 
   React.useEffect(() => {
@@ -25,10 +32,10 @@ const WeekContainer = () => {
           )
           .then((elem) => {
             const oneWeather = elem.data.list.filter((elem) => elem.dt_txt.includes('18:00:00'));
-            setData(oneWeather);
+            dispatch(setData(oneWeather));
           });
       } catch (err) {
-        setCity(`Произошла ошибка :( Город не найден.`)
+        dispatch(setCity(`Произошла ошибка :( Город не найден.`))
       }
     }
     fetchWeather();
