@@ -62,6 +62,7 @@ const WeekContainer = () => {
           const ms = elem.dt * 1000;
           const weekdayName = new Date(ms).toLocaleString('ru', { weekday: 'long' });
           const imgURL = 'owf owf-' + elem.weather[0].id + ' owf-5x icon-style';
+          console.log(imgURL)
 
           return (
             <Card
